@@ -8,9 +8,13 @@ app = Flask(__name__)
 @app.route('/incomingCall', methods=['POST'])
 def incomingCall():
     if request.method == 'POST':
+
+        percl = freeclimb.PerCLScript()
+
         message = "Hello! This is a message sent using FreeClimb's Python SDK."
-        say = freeclimb.Say(text=message).to_dict()
-        return freeclimb.PerCLCommand.to_json(say)
+        percl.append(freeclimb.Say(text=message))
+        print(percl)
+        return json.dumps(percl)
 
 # Specify this route with 'STATUS CALLBACK URL' in App Config
 @app.route('/status', methods=['POST'])
