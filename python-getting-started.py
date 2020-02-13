@@ -13,7 +13,6 @@ def incomingCall():
 
         message = "Hello! This is a message sent using FreeClimb's Python SDK."
         percl.append(freeclimb.Say(text=message))
-        print(percl)
         return json.dumps(percl)
 
 # Specify this route with 'STATUS CALLBACK URL' in App Config
