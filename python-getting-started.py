@@ -1,5 +1,6 @@
 import freeclimb
 from flask import Flask, request
+from freeclimb import percl_to_json
 import json
 
 app = Flask(__name__)
@@ -9,13 +10,12 @@ app = Flask(__name__)
 def incomingCall():
     if request.method == 'POST':
 
-        percl = freeclimb.PerCLScript()
-
         message = "Hello! This is a message sent using FreeClimb's Python SDK."
-        percl.append(freeclimb.Say(text=message))
-        return json.dumps(percl)
+        say = freeclimb.Say(message)
+        script = freeclimb.PerclScript(commands=[say])
+        return percl_to_json(script)
 
 # Specify this route with 'STATUS CALLBACK URL' in App Config
 @app.route('/status', methods=['POST'])
 def status():
-    return json.dumps({'success':True}), 200, {'ContentType':'application/json'} 
+    return json.dumps({'success': True}), 200, {'ContentType': 'application/json'}
