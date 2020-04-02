@@ -10,7 +10,7 @@ app = Flask(__name__)
 def incomingCall():
     if request.method == 'POST':
 
-        message = "Hello! This is a message sent using FreeClimb's Python SDK."
+        message = "Hello, World!"
         say = freeclimb.Say(message)
         script = freeclimb.PerclScript(commands=[say])
         return percl_to_json(script)
