@@ -1,6 +1,6 @@
 # Python - Getting Started Tutorial
 
-This project serves as a guide to help you build an application with FreeClimb. View this tutorial on [FreeClimb.com](https://docs.freeclimb.com/docs/getting-started-with-python). Specifically, the project will:
+This project serves as a guide to help you build an application with FreeClimb. View this tutorial on [FreeClimb.com](https://docs.freeclimb.com/docs/python-voice-calling-quickstart). Specifically, the project will:
 
 - Accept an incoming call and respond with a PerCL command
 
