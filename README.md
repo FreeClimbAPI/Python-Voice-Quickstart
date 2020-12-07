@@ -23,3 +23,7 @@ pip install -r requirements.txt
 ```bash
 env FLASK_APP=python-getting-started.py flask run
 ```
+
+## Getting Help
+
+If you are experiencing difficulties, [contact support](https://freeclimb.com/support).
