@@ -65,3 +65,5 @@ target/
 
 .DS_Store
 freeclimb/.DS_Store
+
+.env
