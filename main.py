@@ -33,10 +33,10 @@ def quickstart_tutorial():
     print("\nWelcome to FreeClimb!\n")
     print("Your account id: {0}".format(account_id))
     print("Your api key is: {0}\n".format(obfuscated_api_key))
-    print("Your web server is listening at: http://127.0.0.1:5000")
-    print("View an example perCl JSON response to FreeClimb at: http://127.0.0.1:5000/incomingCall\n")
+    print("Your web server is listening at: http://127.0.0.1:3000")
+    print("View an example perCl JSON response to FreeClimb at: http://127.0.0.1:3000/incomingCall\n")
     print("Your NEXT STEP is to use NGROK to proxy HTTP Traffic to this local web server.")
-    print("\t1. In NGROK, configure the dynamic url to proxy to http://127.0.0.1:5000")
+    print("\t1. In NGROK, configure the dynamic url to proxy to http://127.0.0.1:3000")
     print("\t2. In the Dashboard or API, set your FreeClimb Application Voice Url to the dynamic endpoint NGROK generated.\n")
 
 
