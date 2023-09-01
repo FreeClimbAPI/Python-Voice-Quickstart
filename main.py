@@ -42,4 +42,4 @@ def quickstart_tutorial():
 
 if __name__ == '__main__':
     quickstart_tutorial()
-    app.run()
+    app.run(port=3000)
