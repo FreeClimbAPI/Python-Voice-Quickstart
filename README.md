@@ -62,13 +62,13 @@ We offer a [Python Voice Quickstart Tutorial](https://docs.freeclimb.com/docs/py
 1. Pull docker image from dockerhub
 
    ```bash
-   docker pull python-voice-quickstart
+   docker pull freeclimbapi/python-voice-quickstart
    ```
 
 2. Run docker image
 
    ```bash
-   docker run -p 3000:3000 python-voice-quickstart
+   docker run -p 3000:3000 freeclimbapi/python-voice-quickstart
    ```
 
 ## Feedback & Issues
