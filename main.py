@@ -1,38 +1,24 @@
 import freeclimb
-from flask import Flask
+from flask import Flask, jsonify
 import os
-from dotenv import load_dotenv
-
-
-load_dotenv()
-account_id = os.environ.get("ACCOUNT_ID")
-api_key = os.environ.get("API_KEY")
-
 
 app = Flask(__name__)
 
-configuration = freeclimb.Configuration(
-    username=account_id,
-    password=api_key
-)
-
-
-# Voice URL
+# Specify this route with 'VOICE URL' in App Config
 @app.route('/incomingCall', methods=['POST', 'GET'])
 def post_incoming_call():
-
     message = "Hello, World!"
     say = freeclimb.Say(text=message)
     script = freeclimb.PerclScript(commands=[say])
     return script.to_json()
 
+# Specify this route with 'STATUS CALLBACK URL' in App Config
+@app.route('/status', methods=['POST'])
+def status():
+    return jsonify({'success':True}), 200, {'ContentType':'application/json'} 
 
 def quickstart_tutorial():
-    obfuscated_api_key = '*'*(len(api_key) - 4)+api_key[-4:]
-
     print("\nWelcome to FreeClimb!\n")
-    print("Your account id: {0}".format(account_id))
-    print("Your api key is: {0}\n".format(obfuscated_api_key))
     print("Your web server is listening at: http://127.0.0.1:3000")
     print("View an example perCl JSON response to FreeClimb at: http://127.0.0.1:3000/incomingCall\n")
     print("Your NEXT STEP is to use NGROK to proxy HTTP Traffic to this local web server.")
@@ -42,4 +28,4 @@ def quickstart_tutorial():
 
 if __name__ == '__main__':
     quickstart_tutorial()
-    app.run(port=3000)
+    app.run(host='0.0.0.0', port=3000)
