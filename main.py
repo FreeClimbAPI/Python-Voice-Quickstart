@@ -25,6 +25,15 @@ def quickstart_tutorial():
     print("\t1. In NGROK, configure the dynamic url to proxy to http://127.0.0.1:3000")
     print("\t2. In the Dashboard or API, set your FreeClimb Application Voice Url to the dynamic endpoint NGROK generated.\n")
 
+# Liveness probe endpoint
+@app.route('/live', methods=['GET'])
+def live():
+    return jsonify({'status': 'live'}), 200, {'ContentType':'application/json'}
+
+# Readiness probe endpoint
+@app.route('/ready', methods=['GET'])
+def ready():
+    return jsonify({'status': 'ready'}), 200,  {'ContentType':'application/json'}
 
 if __name__ == '__main__':
     quickstart_tutorial()
