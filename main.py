@@ -15,7 +15,7 @@ def post_incoming_call():
 # Specify this route with 'STATUS CALLBACK URL' in App Config
 @app.route('/status', methods=['POST'])
 def status():
-    return jsonify({'success':True}), 200, {'ContentType':'application/json'} 
+    return jsonify({'success':True})
 
 def quickstart_tutorial():
     print("\nWelcome to FreeClimb!\n")
@@ -28,12 +28,12 @@ def quickstart_tutorial():
 # Liveness probe endpoint
 @app.route('/live', methods=['GET'])
 def live():
-    return jsonify({'status': 'live'}), 200, {'ContentType':'application/json'}
+    return jsonify({'status': 'live'})
 
 # Readiness probe endpoint
 @app.route('/ready', methods=['GET'])
 def ready():
-    return jsonify({'status': 'ready'}), 200,  {'ContentType':'application/json'}
+    return jsonify({'status': 'ready'})
 
 if __name__ == '__main__':
     quickstart_tutorial()
